@@ -1,0 +1,36 @@
+CREATE SCHEMA db_airport;
+
+
+CREATE TABLE db_airport.destination(
+Destination_ID INT NOT NULL,
+Name VARCHAR NOT NULL,
+Info VARCHAR NOT NULL,
+PRIMARY KEY (Destination_ID));
+CREATE TABLE db_airport.flights(
+Flight_ID INT NOT NULL,
+Destination_ID INT NOT NULL,
+Departure_date DATE NOT NULL,
+Departure_time TIME NOT NULL,
+Arrival_date DATE NOT NULL,
+Arrival_time TIME NOT NULL,
+Plane_ID INT NOT NULL,
+PRIMARY KEY (Flight_ID));
+CREATE TABLE db_airport.planes(
+Plane_ID INT NOT NULL,
+Type VARCHAR NOT NULL,
+Info VARCHAR NOT NULL,
+PRIMARY KEY (Plane_ID));
+CREATE TABLE db_airport.sales(
+Sale_ID INT NOT NULL,
+Name VARCHAR NOT NULL,
+Value INT NOT NULL,
+PRIMARY KEY (Sale_ID));
+CREATE TABLE db_airport.tickets(
+Ticket_ID INT NOT NULL,
+Flight_ID INT NOT NULL,
+Class INT NOT NULL,
+Place VARCHAR NOT NULL,
+Price DECIMAL NOT NULL,
+Sale_ID INT NOT NULL,
+Sold VARCHAR NOT NULL,
+PRIMARY KEY (Ticket_ID));
